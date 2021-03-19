@@ -1,16 +1,22 @@
+@font-face {
+    font-family: "NASA";
+    src: url("./fonts/nasalization-rg.ttf");
+}
+
 h1 {
     text-align: center;
     color: whitesmoke;
-    margin-top: 2em;
+    font-size: 52px;
+    outline: rgba(255, 166, 0, 0.815);
+    outline-style: dashed;
+    outline-width: .1em;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 1em;
 }
 
 div {
     text-align: left;
-}
-
-@font-face {
-    font-family: "NASA";
-    src: url("./fonts/nasalization-rg.ttf");
 }
 
 body {

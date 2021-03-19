@@ -8,23 +8,23 @@
 </head>
 
 <body>
-    <h1>LAUNCH CHECKLIST FORM</h1>
+    <h1 style="text-align:center">LAUNCH CHECKLIST FORM</h1>
     <div id="missionTarget">
         <!-- Fetch some planetary data -->
     </div>
     <div id="launchForm">
         <form>
             <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                <label>pilot name <input type="text" name="pilotName" id="pilotName" pattern="[A-Za-z ]+" required/></label>
+                <label>pilot name <input type="text" name="pilotName" id="pilotName" pattern="[A-Za-z ]+" title="Enter Pilot's Name" required/></label>
             </div>
             <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                <label>co-pilot name <input type="text" name="copilotName" pattern="[A-Za-z ]+" required/></label>
+                <label>co-pilot name <input type="text" name="copilotName" pattern="[A-Za-z ]+" title="Enter Co-Pilot's Name" required/></label>
             </div>
             <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                <label>fuel level (L) <input type="text" name="fuelLevel" pattern="[0-9]+" required/></label>
+                <label>fuel level (L) <input type="text" name="fuelLevel" pattern="[0-9]+" title="Enter Fuel Level" required/></label>
             </div>
             <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                <label>cargo mass (kg) <input type="text" name="cargoMass" pattern="[0-9]+" required/></label>
+                <label>cargo mass (kg) <input type="text" name="cargoMass" pattern="[0-9]+" title="Enter Cargo Mass" required/></label>
             </div>
             <button id="formSubmit">submit</button>
         </form>
