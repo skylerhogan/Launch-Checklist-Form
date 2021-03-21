@@ -17,9 +17,9 @@ window.addEventListener("load", function() {
 
         //statuses
         let pilotStatus = document.getElementById("pilotStatus");
-        pilotStatus.innerHTML = `Pilot ${pilotInput} is ready for launch.`
+        pilotStatus.innerHTML = `Pilot ${pilotInput} is ready for launch.`;
         let copilotStatus = document.getElementById("copilotStatus");
-        copilotStatus.innerHTML = `Co-pilot ${copilotInput} is ready for launch.`
+        copilotStatus.innerHTML = `Co-pilot ${copilotInput} is ready for launch.`;
         let fuelStatus = document.getElementById("fuelStatus");
         let cargoStatus = document.getElementById("cargoStatus");
         let launchStatus = document.getElementById("launchStatus")
@@ -32,20 +32,20 @@ window.addEventListener("load", function() {
             launchStatus.style.color = "#62fff4"
         } else if ((fuelInput.value < 10000) || (cargoInput.value > 10000)) {
             faultyItems.style.visibility = "visible";
-            launchStatus.innerHTML = "Shuttle is not ready for launch!"
-            launchStatus.style.color = "#ff0163"
+            launchStatus.innerHTML = "Shuttle is not ready for launch!";
+            launchStatus.style.color = "#ff0163";
         };
 
         if (fuelInput.value < 10000) {
-            fuelStatus.innerHTML = "Fuel level is too low for launch!"
+            fuelStatus.innerHTML = "Fuel level is too low for launch!";
         } else {
-            fuelStatus.innerHTML = "Fuel level high enough for launch."
+            fuelStatus.innerHTML = "Fuel level high enough for launch.";
         };
 
         if (cargoInput.value > 10000) {
-            cargoStatus.innerHTML = "Cargo mass is too great for launch!"
+            cargoStatus.innerHTML = "Cargo mass is too great for launch!";
         } else {
-            cargoStatus.innerHTML = "Cargo mass is low enough for launch."
+            cargoStatus.innerHTML = "Cargo mass is low enough for launch.";
         };
     });
 
@@ -57,7 +57,7 @@ window.addEventListener("load", function() {
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             };
-            let randomDestination = getRandomInt(5)
+            let randomDestination = getRandomInt(5);
 
             //missionTarget html format
             const missionTarget = document.getElementById("missionTarget");
