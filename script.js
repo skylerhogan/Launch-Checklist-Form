@@ -5,15 +5,19 @@ window.addEventListener("load", function() {
         event.preventDefault();
         //inputs
         let pilotInput = document.querySelector("input[name=pilotName]");
+        pilotInput = pilotInput.value.toString();
+        pilotInput = pilotInput[0].toUpperCase() + pilotInput.substring(1);
         let copilotInput = document.querySelector("input[name=copilotName]");
+        copilotInput = copilotInput.value.toString();
+        copilotInput = copilotInput[0].toUpperCase() + copilotInput.substring(1);
         let fuelInput = document.querySelector("input[name=fuelLevel]");
         let cargoInput = document.querySelector("input[name=cargoMass]");
 
         //statuses
         let pilotStatus = document.getElementById("pilotStatus");
-        pilotStatus.innerHTML = `Pilot ${pilotInput.value} is ready for launch.`
+        pilotStatus.innerHTML = `Pilot ${pilotInput} is ready for launch.`
         let copilotStatus = document.getElementById("copilotStatus");
-        copilotStatus.innerHTML = `Co-pilot ${copilotInput.value} is ready for launch.`
+        copilotStatus.innerHTML = `Co-pilot ${copilotInput} is ready for launch.`
         let fuelStatus = document.getElementById("fuelStatus");
         let cargoStatus = document.getElementById("cargoStatus");
         let launchStatus = document.getElementById("launchStatus")
@@ -22,11 +26,11 @@ window.addEventListener("load", function() {
         //conditonals for launch
         if ((fuelInput.value >= 10000) && (cargoInput.value <= 10000)) {
             faultyItems.style.visibility = "visible";
-            launchStatus.innerHTML = "SHUTTLE IS READY FOR LAUNCH!"
+            launchStatus.innerHTML = "Shuttle is ready for launch!"
             launchStatus.style.color = "#62fff4"
         } else if ((fuelInput.value < 10000) || (cargoInput.value > 10000)) {
             faultyItems.style.visibility = "visible";
-            launchStatus.innerHTML = "SHUTTLE IS NOT READY FOR LAUNCH!"
+            launchStatus.innerHTML = "Shuttle is not ready for launch!"
             launchStatus.style.color = "#ff0163"
         };
 
@@ -42,18 +46,27 @@ window.addEventListener("load", function() {
             cargoStatus.innerHTML = "Cargo mass is low enough for launch."
         };
 
+
+
+    });
+
+    //planetary data
+    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
+        response.json().then(function(json) {
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            };
+            let randomDestination = getRandomInt(5)
+            const missionTarget = document.getElementById("missionTarget");
+            missionTarget.innerHTML = `<h2>Mission Destination</h2>
+            <ol>
+               <li>Name: ${json[randomDestination].name}</li>
+               <li>Diameter: ${json[randomDestination].diameter}</li>
+               <li>Star: ${json[randomDestination].star}</li>
+               <li>Distance from Earth: ${json[randomDestination].distance}</li>
+               <li>Number of Moons: ${json[randomDestination].moons}</li>
+            </ol>
+            <img src="${json[randomDestination].image}">`
+        });
     });
 });
-
-
-/* This block of code shows how to format the HTML once you fetch some planetary JSON!
-<h2>Mission Destination</h2>
-<ol>
-   <li>Name: ${}</li>
-   <li>Diameter: ${}</li>
-   <li>Star: ${}</li>
-   <li>Distance from Earth: ${}</li>
-   <li>Number of Moons: ${}</li>
-</ol>
-<img src="${}">
-*/
