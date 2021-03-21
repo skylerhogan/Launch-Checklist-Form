@@ -1,28 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
 @font-face {
     font-family: "NASA";
     src: url("./fonts/nasalization-rg.ttf");
 }
 
+head {
+    opacity: 0%;
+}
+
+#mask {
+    background-color: rgb(36, 37, 37);
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+}
+
 h1 {
     text-align: center;
-    color: whitesmoke;
+    background-color: #212121c9;
+    color: white;
     font-size: 52px;
-    outline: rgba(255, 166, 0, 0.815);
-    outline-style: dashed;
-    outline-width: .1em;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 1em;
+    margin-top: 1.5em;
+    animation: mymove 3s infinite;
+    text-shadow: -1px 2px 3px #2d2d2d, 1px 2px 3px #2d2d2d, 1px -1px 0 #2d2d2d, -1px -1px 0 #2d2d2d;
+}
+
+@keyframes mymove {
+    50% {
+        outline: .1em dashed #fe6800;
+    }
 }
 
 div {
     text-align: left;
 }
 
-body {
-    background-image: url("./images/27uN4H.jpg");
-    background-size: cover;
+.box {
     font-family: "NASA";
+}
+
+body {
+    font-family: "NASA";
+}
+
+#bg {
+    width: 100%;
+    height: 100%;
+    background: url('./images/minimalist-space-z8.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-animation: myfirst 10s;
+    /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
+
+@-webkit-keyframes myfirst {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 #faultyItems {
@@ -30,23 +72,29 @@ body {
 }
 
 #launchForm {
-    background-color: whitesmoke;
     text-align: center;
     margin: auto;
     width: 25%;
-    border: 5px outset whitesmoke;
+    border: 5px outset #e59330;
     padding: 10px;
-    opacity: 90%;
+    opacity: 100%;
+    color: white;
+    background-color: #2d2d2dc4;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px rgb(36, 37, 37), 2px 2px 1px #363636;
 }
 
 #launchStatusCheck {
-    background-color: whitesmoke;
     text-align: center;
     margin: 50px auto;
     width: 50%;
-    border: 5px outset whitesmoke;
+    border: 5px outset #62fff4;
     padding: 10px;
-    opacity: 90%;
+    opacity: 100%;
+    color: white;
+    background-color: #2d2d2dc4;
+    letter-spacing: .1em;
+    text-shadow: -1px -1px 1px rgb(36, 37, 37), 2px 2px 1px #363636;
 }
 
 #missionTarget img {
@@ -55,23 +103,37 @@ body {
 }
 
 #missionTarget {
-    background-color: whitesmoke;
+    background-color: #2d2d2dc4;
     text-align: center;
     margin: 50px auto;
     width: 50%;
-    border: 5px outset whitesmoke;
+    border: 5px outset #ff6091;
     padding: 10px;
-    opacity: 90%;
+    opacity: 100%;
 }
 
 button {
-    background-color: rgba(255, 166, 0, 0.815);
+    background-color: #e59330;
     border: none;
-    color: white;
-    border-radius: 8px;
+    color: #ffffff;
+    /* border-radius: 8px; */
     width: 25%;
     height: 30px;
-    margin: 10px 0;
     font-family: "NASA";
     font-size: larger;
+    box-shadow: 0px 0px 0px 5px #e59330;
+    transition: box-shadow 0.3s linear;
+    margin: .5em;
+    margin-top: 1em;
+}
+
+button:hover {
+    box-shadow: 0px 0px 0px 10px #e59330;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
