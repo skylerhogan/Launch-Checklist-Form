@@ -5,13 +5,15 @@ window.addEventListener("load", function() {
         event.preventDefault();
         //inputs
         let pilotInput = document.querySelector("input[name=pilotName]");
-        pilotInput = pilotInput.value.toString();
-        pilotInput = pilotInput[0].toUpperCase() + pilotInput.substring(1);
         let copilotInput = document.querySelector("input[name=copilotName]");
-        copilotInput = copilotInput.value.toString();
-        copilotInput = copilotInput[0].toUpperCase() + copilotInput.substring(1);
         let fuelInput = document.querySelector("input[name=fuelLevel]");
         let cargoInput = document.querySelector("input[name=cargoMass]");
+
+        //capitalizes name inputs
+        pilotInput = pilotInput.value.toString();
+        pilotInput = pilotInput[0].toUpperCase() + pilotInput.substring(1);
+        copilotInput = copilotInput.value.toString();
+        copilotInput = copilotInput[0].toUpperCase() + copilotInput.substring(1);
 
         //statuses
         let pilotStatus = document.getElementById("pilotStatus");
@@ -23,7 +25,7 @@ window.addEventListener("load", function() {
         let launchStatus = document.getElementById("launchStatus")
         let faultyItems = document.getElementById("faultyItems");
 
-        //conditonals for launch
+        //conditionals for launch
         if ((fuelInput.value >= 10000) && (cargoInput.value <= 10000)) {
             faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle is ready for launch!"
@@ -45,18 +47,19 @@ window.addEventListener("load", function() {
         } else {
             cargoStatus.innerHTML = "Cargo mass is low enough for launch."
         };
-
-
-
     });
 
     //planetary data
     fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
         response.json().then(function(json) {
+
+            //bonus mission: randomizes destination
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             };
             let randomDestination = getRandomInt(5)
+
+            //missionTarget html format
             const missionTarget = document.getElementById("missionTarget");
             missionTarget.innerHTML = `<h2>Mission Destination</h2>
             <ol>
