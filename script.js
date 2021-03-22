@@ -1,4 +1,3 @@
-// Write your JavaScript code here!
 window.addEventListener("load", function() {
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
@@ -9,11 +8,11 @@ window.addEventListener("load", function() {
         let fuelInput = document.querySelector("input[name=fuelLevel]");
         let cargoInput = document.querySelector("input[name=cargoMass]");
 
-        //capitalizes name inputs
+        //optimize name inputs
         pilotInput = pilotInput.value.toString();
-        pilotInput = pilotInput[0].toUpperCase() + pilotInput.substring(1);
+        pilotInput = pilotInput[0].toUpperCase() + pilotInput.substring(1).toLowerCase();
         copilotInput = copilotInput.value.toString();
-        copilotInput = copilotInput[0].toUpperCase() + copilotInput.substring(1);
+        copilotInput = copilotInput[0].toUpperCase() + copilotInput.substring(1).toLowerCase();
 
         //statuses
         let pilotStatus = document.getElementById("pilotStatus");
