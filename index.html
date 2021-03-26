@@ -22,16 +22,16 @@
                     <label>Co-Pilot Name <input type="text" name="copilotName" pattern="[A-Za-z ']+" title="Enter Co-Pilot's Name" required/></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Fuel Level (L) <input type="text" name="fuelLevel" pattern="[0-9]+" title="Enter Positive Integers Only" required/></label>
+                    <label>Fuel Level (L) <input type="text" name="fuelLevel" pattern="[0-9 .]+" title="Enter Positive Integers Only" required/></label>
                 </div>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin: 8 0;">
-                    <label>Cargo Mass (kg) <input type="text" name="cargoMass" pattern="[0-9]+" title="Enter Positive Integers Only" required/></label>
+                    <label>Cargo Mass (kg) <input type="text" name="cargoMass" pattern="[0-9 .]+" title="Enter Positive Integers Only" required/></label>
                 </div>
                 <button id="formSubmit">SUBMIT</button>
             </form>
         </div>
         <div id="launchStatusCheck">
-            <h2 id="launchStatus" class="box">Awaiting Information Before Launch</h2>
+            <h2 id="launchStatus">Awaiting Information Before Launch...</h2>
             <div id="faultyItems">
                 <ol>
                     <li id="pilotStatus">Pilot Ready</li>

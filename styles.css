@@ -4,13 +4,8 @@
     src: url("./fonts/nasalization-rg.ttf");
 }
 
-head {
-    opacity: 0%;
-}
-
 #mask {
     background-color: rgb(36, 37, 37);
-    opacity: 50%;
     width: 100%;
     height: 100%;
 }
@@ -35,10 +30,6 @@ h1 {
 
 div {
     text-align: left;
-}
-
-.box {
-    font-family: "NASA";
 }
 
 body {
@@ -69,14 +60,14 @@ body {
 
 #faultyItems {
     visibility: hidden;
-    text-shadow: 1px 1px 1px #000000,
+    text-shadow: 1px 1px 1px #0897c1, 0px 0px 1px #0897c1;
 }
 
 #launchForm {
     text-align: center;
     margin: auto;
     width: 25%;
-    border: 5px outset #e59330;
+    border: 10px outset #e59330;
     border-radius: 2em;
     padding: 10px;
     opacity: 100%;
@@ -91,7 +82,7 @@ body {
     margin: 50px auto;
     margin-bottom: 5em;
     width: 50%;
-    border: 5px outset #62fff4;
+    border: 10px outset #085e76e5;
     border-radius: 2em;
     padding: 10px;
     opacity: 100%;
@@ -101,7 +92,7 @@ body {
 }
 
 #launchStatus {
-    text-shadow: 1px 1px 1px #000000,
+    color: white;
 }
 
 #missionTarget img {
@@ -115,7 +106,7 @@ body {
     text-align: center;
     margin: 50px auto;
     width: 50%;
-    border: 5px outset #ff6091;
+    border: 10px outset #ff6091;
     border-radius: 2em;
     padding: 10px;
     opacity: 100%;

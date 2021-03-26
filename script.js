@@ -28,7 +28,6 @@ window.addEventListener("load", function() {
         if ((fuelInput.value >= 10000) && (cargoInput.value <= 10000)) {
             faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle is ready for launch!"
-            launchStatus.style.color = "#62fff4"
         } else if ((fuelInput.value < 10000) || (cargoInput.value > 10000)) {
             faultyItems.style.visibility = "visible";
             launchStatus.innerHTML = "Shuttle is not ready for launch!";
